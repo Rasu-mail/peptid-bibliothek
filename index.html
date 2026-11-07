@@ -581,7 +581,7 @@ html.embedded #drPrint{display:none!important}
         <ul class="gloss">
           <li><b>mcg</b> = Mikrogramm (1.000 mcg = 1 mg) · <b>mg</b> = Milligramm · <b>ml</b> = Milliliter</li>
           <li><b>IE</b> = Internationale Einheiten. Eine Wirkungs-, keine Gewichtsangabe, z. B. bei Oxytocin</li>
-          <li><b>Einheiten / Striche</b> = Skala auf einer U-100-Insulinspritze: 100 Einheiten = 1 ml, 10 Einheiten = 0,1 ml</li>
+          <li><b>Einheiten / Striche</b> = Skala auf einer Insulinspritze. U-100: 100 Einheiten = 1 ml, 10 Einheiten = 0,1 ml. U-40: 40 Einheiten = 1 ml, 10 Einheiten = 0,25 ml</li>
           <li><b>Vial</b> = kleines Glasfläschchen mit Gummistopfen · <b>Lyophilisat</b> = gefriergetrocknetes Pulver darin</li>
           <li><b>Rekonstitution</b> = das Anmischen: Pulver mit Wasser lösen</li>
           <li><b>Bakteriostatisches Wasser</b> = steriles Wasser mit 0,9 % Benzylalkohol, hemmt Keime, wenn das Vial mehrmals angestochen wird</li>
@@ -653,7 +653,7 @@ html.embedded #drPrint{display:none!important}
   <!-- Rechner -->
   <section id="rechner">
     <div class="wrap">
-      <div class="sec-head"><h2>Wie viele Einheiten?</h2><p>Vial-Inhalt, Menge an bakteriostatischem Wasser und gewünschte Dosis eingeben – der Rechner zeigt Konzentration, Volumen und die Striche auf einer U-100-Insulinspritze. Auf jeder Peptid-Seite gibt es einen Knopf, der die Werte direkt hier einträgt.</p></div>
+      <div class="sec-head"><h2>Wie viele Einheiten?</h2><p>Vial-Inhalt, Menge an bakteriostatischem Wasser und gewünschte Dosis eingeben – der Rechner zeigt Konzentration, Volumen und die Striche auf einer U-100- oder U-40-Insulinspritze. Auf jeder Peptid-Seite gibt es einen Knopf, der die Werte direkt hier einträgt.</p></div>
       <div class="calc">
         <div class="panel">
           <div class="field"><label for="cPreset">Vorlage</label>
@@ -664,7 +664,7 @@ html.embedded #drPrint{display:none!important}
             <div class="in"><input id="cDose" type="number" min="0" step="any" value="250" inputmode="decimal">
               <div class="seg" id="cUnit"><button data-u="mcg" aria-pressed="true">mcg</button><button data-u="mg" aria-pressed="false">mg</button></div></div></div>
           <div class="field"><label for="cSyr">Spritze</label>
-            <select id="cSyr"><option value="100">U-100, 1,0 ml (100 Einheiten)</option><option value="50">U-100, 0,5 ml (50 Einheiten)</option><option value="30">U-100, 0,3 ml (30 Einheiten)</option></select></div>
+            <select id="cSyr"><optgroup label="U-100 (100 Einheiten pro ml)"><option value="100" data-per="100" data-cap="100">U-100, 1,0 ml (100 Einheiten)</option><option value="50" data-per="100" data-cap="50">U-100, 0,5 ml (50 Einheiten)</option><option value="30" data-per="100" data-cap="30">U-100, 0,3 ml (30 Einheiten)</option></optgroup><optgroup label="U-40 (40 Einheiten pro ml)"><option value="u40" data-per="40" data-cap="40">U-40, 1,0 ml (40 Einheiten)</option><option value="u40h" data-per="40" data-cap="20">U-40, 0,5 ml (20 Einheiten)</option></optgroup></select></div>
         </div>
         <div class="panel">
           <div class="out">
@@ -675,7 +675,7 @@ html.embedded #drPrint{display:none!important}
           </div>
           <svg id="syringe" viewBox="0 0 760 150" role="img" aria-label="Spritze mit Füllstand"></svg>
           <div class="calc-msg" id="cMsg"></div>
-          <p class="hint" style="margin:10px 0 0">Formel: Konzentration = mg ÷ ml · Volumen = Dosis ÷ Konzentration · Einheiten = Volumen × 100. Immer zweimal prüfen: Ein Kommafehler bedeutet die zehnfache Dosis. Der Rechner gilt nur für U-100-Insulinspritzen. Er sagt dir, wie du rechnest, nicht welche Dosis für dich richtig ist.</p>
+          <p class="hint" style="margin:10px 0 0">Formel: Konzentration = mg ÷ ml · Volumen = Dosis ÷ Konzentration · Einheiten = Volumen × 100 bei U-100, × 40 bei U-40. Immer zweimal prüfen: Ein Kommafehler bedeutet die zehnfache Dosis. Achte darauf, dass die gewählte Spritze zu deiner passt: Auf einer U-40-Spritze steht derselbe Strich für das 2,5-Fache der Menge einer U-100-Spritze. Vorlagen und Angaben in Einheiten auf den Peptid-Seiten beziehen sich auf U-100. Er sagt dir, wie du rechnest, nicht welche Dosis für dich richtig ist.</p>
         </div>
       </div>
     </div>
@@ -690,7 +690,7 @@ html.embedded #drPrint{display:none!important}
           <li>das Peptid-Vial</li>
           <li>bakteriostatisches Wasser: <span class="pill">3 ml</span> für ein bis zwei Vials, <span class="pill">10 ml</span> als Vorrat</li>
           <li>eine Spritze zum Anmischen, z. B. 1 ml oder 3 ml</li>
-          <li>U-100-Insulinspritzen zum Spritzen</li>
+          <li>Insulinspritzen zum Spritzen, meist U-100, seltener U-40</li>
           <li>Alkoholtupfer</li>
           <li>einen Abwurfbehälter für gebrauchte Nadeln, zur Not eine leere, feste Plastikflasche mit Deckel</li></ol>
           <h3 style="margin-top:22px">Lagern</h3><ol class="plain">
@@ -2038,7 +2038,7 @@ function detail(p){
   let mix = "";
   if (p.mix){
     const r = mixText(p.mix);
-    const m = rb ? esc(rb) : `${fmt(p.mix.mg)} mg + ${fmt(p.mix.ml)} ml bakteriostatisches Wasser → ${fmt(r.conc)} mg/ml · ${fmt(p.mix.dose)} ${p.mix.unit} = <b>${fmt(r.u)} Einheiten</b> (${fmt(r.ml)} ml)${p.mix.note ? `<br><span style="opacity:.7;font-size:12px">${esc(p.mix.note)}</span>` : ""}`;
+    const m = rb ? esc(rb) : `${fmt(p.mix.mg)} mg + ${fmt(p.mix.ml)} ml bakteriostatisches Wasser → ${fmt(r.conc)} mg/ml · ${fmt(p.mix.dose)} ${p.mix.unit} = <b>${fmt(r.u)} Einheiten</b> auf der U-100-Spritze (${fmt(r.ml)} ml)${p.mix.note ? `<br><span style="opacity:.7;font-size:12px">${esc(p.mix.note)}</span>` : ""}`;
     mix = `<div class="mixbox"><div class="m"><span class="mk">Rechenbeispiel</span>${m}</div><button data-calc="${p.id}">Im Rechner öffnen</button></div>`;
   } else if (rb) mix = `<div class="blk txt"><h4>Rechenbeispiel</h4><p>${inl(rb)}</p></div>`;
   const track = d.kur.length && !p.noDose ? `<a class="trk-btn" href="#tracker/add=${p.id}">Vorlage in den Tracker übernehmen</a>` : "";
@@ -2171,16 +2171,16 @@ $("#cPreset").onchange = e => { if (e.target.value) loadPreset(e.target.value); 
 cSyr.addEventListener("change", calc);
 let shownU = 0, animF = 0, calcReady = false;
 function calc(){
-  const mg = parseFloat(String(cMg.value).replace(",", ".")), ml = parseFloat(String(cMl.value).replace(",", ".")), dose = parseFloat(String(cDose.value).replace(",", ".")), cap = +cSyr.value;
+  const mg = parseFloat(String(cMg.value).replace(",", ".")), ml = parseFloat(String(cMl.value).replace(",", ".")), dose = parseFloat(String(cDose.value).replace(",", ".")), opt = cSyr.selectedOptions[0], per = +opt.dataset.per, cap = +opt.dataset.cap, typ = per === 40 ? "U-40" : "U-100";
   const msg = $("#cMsg"); msg.className = "calc-msg";
   if (!(mg > 0 && ml > 0 && dose > 0)){ ["#oConc","#oMl","#oU","#oN"].forEach(s => $(s).textContent = "–"); msg.textContent = "Bitte alle Felder mit Werten über 0 füllen."; drawSyringe(0, cap); return; }
-  const conc = mg / ml, dMg = cUnit === "mg" ? dose : dose / 1000, vol = dMg / conc, u = vol * 100, n = mg / dMg;
+  const conc = mg / ml, dMg = cUnit === "mg" ? dose : dose / 1000, vol = dMg / conc, u = vol * per, n = mg / dMg;
   $("#oConc").textContent = fmt(conc); $("#oMl").textContent = fmt(vol); $("#oU").textContent = fmt(u); $("#oN").textContent = n >= 1 ? Math.floor(n + 1e-9) : fmt(n);
   if (dMg > mg){ msg.textContent = "Die Dosis ist größer als der gesamte Vial-Inhalt – Einheit (mcg/mg) prüfen!"; msg.classList.add("bad"); }
-  else if (u > cap){ msg.textContent = `${fmt(u)} Einheiten passen nicht in diese Spritze (${cap}). Größere Spritze wählen, auf zwei Injektionen aufteilen oder mit weniger Wasser anmischen.`; msg.classList.add("bad"); }
+  else if (u > cap){ msg.textContent = `${fmt(u)} Einheiten passen nicht in diese Spritze (${typ}, ${cap} Einheiten). Größere Spritze wählen, auf zwei Injektionen aufteilen oder mit weniger Wasser anmischen.`; msg.classList.add("bad"); }
   else if (u < 2){ msg.textContent = "Unter 2 Einheiten ist kaum genau abzumessen. Mehr Wasser zum Anmischen verwenden – dann werden die Striche größer."; msg.classList.add("bad"); }
-  else msg.textContent = `Ziehe bis zum Strich ${fmt(u)} auf. Bei ${fmt(n)} Dosen reicht das Vial ${n >= 1 ? "für " + Math.floor(n + 1e-9) + " Anwendungen" : "nicht für eine volle Dosis"}.`;
-  const s = store.get("calc", {}); Object.assign(s, {mg, ml, dose, unit:cUnit, cap}); store.set("calc", s);
+  else msg.textContent = `Ziehe auf der ${typ}-Spritze bis zum Strich ${fmt(u)} auf. Bei ${fmt(n)} Dosen reicht das Vial ${n >= 1 ? "für " + Math.floor(n + 1e-9) + " Anwendungen" : "nicht für eine volle Dosis"}.`;
+  const s = store.get("calc", {}); Object.assign(s, {mg, ml, dose, unit:cUnit, cap: cSyr.value}); store.set("calc", s);
   const from = shownU, to = Math.min(u, cap), t0 = performance.now();
   cancelAnimationFrame(animF);
   /* Füllstand nur nach einer Eingabe animieren, nicht beim Laden */
@@ -2190,10 +2190,10 @@ function calc(){
 }
 function drawSyringe(u, cap, over){
   const x0 = 90, w = 520, y = 40, h = 56, fillW = w * Math.max(0, Math.min(1, u / cap));
-  const major = cap === 100 ? 10 : cap === 50 ? 5 : 5, minor = cap === 100 ? 2 : 1;
+  const major = cap === 100 ? 10 : 5, minor = cap === 100 ? 2 : 1;
   /* Auf schmalen Bildschirmen wird die SVG stark verkleinert: weniger, dafür größere Beschriftungen */
   const k = Math.max(1, 760 / ($("#syringe").clientWidth || 760)), narrow = k > 1.6;
-  const every = narrow ? (cap === 30 ? 10 : cap / 2) : major, fs = Math.min(26, 13 * Math.max(1, k * .75)), fsU = Math.min(28, 15 * Math.max(1, k * .75));
+  const every = narrow ? (cap === 30 || cap === 20 ? 10 : cap / 2) : major, fs = Math.min(26, 13 * Math.max(1, k * .75)), fsU = Math.min(28, 15 * Math.max(1, k * .75));
   let ticks = "";
   for (let i = 0; i <= cap; i += minor){
     const x = x0 + w * i / cap, big = i % major === 0;
@@ -2216,8 +2216,8 @@ function drawSyringe(u, cap, over){
 }
 (function initCalc(){
   const s = store.get("calc", null);
-  if (s && s.preset && byId[s.preset]){ loadPreset(s.preset); $("#cPreset").value = s.preset; if (s.cap) { cSyr.value = s.cap; calc(); } return; }
-  if (s && s.mg){ cMg.value = s.mg; cMl.value = s.ml; cDose.value = s.dose; setUnit(s.unit || "mcg"); if (s.cap) cSyr.value = s.cap; }
+  if (s && s.preset && byId[s.preset]){ loadPreset(s.preset); $("#cPreset").value = s.preset; if (s.cap) { cSyr.value = s.cap; if (!cSyr.value) cSyr.value = "100"; calc(); } return; }
+  if (s && s.mg){ cMg.value = s.mg; cMl.value = s.ml; cDose.value = s.dose; setUnit(s.unit || "mcg"); if (s.cap) cSyr.value = s.cap; if (!cSyr.value) cSyr.value = "100"; }
   calc();
 })();
 calcReady = true;
